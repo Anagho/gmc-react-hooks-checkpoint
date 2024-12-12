@@ -28,7 +28,7 @@ function AppHeader({
       </div>
 
       {/* Search and Rating Filters */}
-      <div className="w-full max-w-sm md:max-w-xl mt-6 z-10 px-4">
+      <div className="w-full max-w-sm md:max-w-3xl mt-6 z-10 px-4">
         <Filter
           searchTitle={searchTitle}
           setSearchTitle={setSearchTitle}
