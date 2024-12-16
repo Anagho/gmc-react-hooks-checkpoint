@@ -43,10 +43,6 @@ const AddMovie = ({ handleAddNewMovie }) => {
       return;
     }
 
-    if (validator.isURL(movieData.trailerURL) === false) {
-      errorAlert("Please provide a valid movie trailer URL");
-      return;
-    }
 
     if (movieData.rating === null) {
       errorAlert("Please select a movie rating");
@@ -123,13 +119,7 @@ const AddMovie = ({ handleAddNewMovie }) => {
               { value: 5, label: "5 Stars" },
             ]}
           />
-          <Input
-            value={movieData.trailerURL}
-            onChange={(event) =>
-              setMovieData({ ...movieData, trailerURL: event.target.value })
-            }
-            placeholder="Movie Trailer URL"
-          />
+          
         </form>
       </Modal>
     </>
