@@ -1,5 +1,4 @@
 import { Card } from "antd";
-import { Link } from "react-router";
 import MovieRating from "./MovieRating"; // Import the MovieRating component
 
 const { Meta } = Card;
@@ -9,7 +8,6 @@ function MovieCard({ id, title, description, posterURL, rating }) {
   const limitedDescription =
     description.length > 30 ? description.slice(0, 30) + "..." : description;
   return (
-    <Link to={`/movie/${id}`} className="no-underline">
       <Card
         hoverable
         cover={
@@ -31,7 +29,6 @@ function MovieCard({ id, title, description, posterURL, rating }) {
           }
         />
       </Card>
-    </Link>
   );
 }
 
