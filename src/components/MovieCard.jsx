@@ -1,46 +1,37 @@
-import { Card, Tag, Button } from "antd";
-import { FaStar } from "react-icons/fa";
+import { Card } from "antd";
+import { Link } from "react-router";
+import MovieRating from "./MovieRating"; // Import the MovieRating component
 
 const { Meta } = Card;
 
-function MovieCard({ title, description, posterURL, rating }) {
+function MovieCard({ id, title, description, posterURL, rating }) {
+  // Limit the description to the first 30 characters
+  const limitedDescription =
+    description.length > 30 ? description.slice(0, 30) + "..." : description;
   return (
-    <Card
-      hoverable
-      cover={
-        <img
-          className="w-[500px] h-[300px] object-cover"
-          alt="example"
-          src={posterURL}
-        />
-      }
-    >
-      <h2 className="text-xl font-semibold mb-2">{title}</h2>
-      <Meta
-        // title={title}
-        description={
-          <div className="flex flex-col gap-3">
-            <p>{description}</p>
-            <div className="flex items-center text-lg">
-              <strong>Rating:</strong>
-              <div className="flex ml-2">
-                {[...Array(5)].map((_, index) => (
-                  <FaStar
-                    key={index}
-                    color={index < rating ? "gold" : "lightgray"}
-                  />
-                ))}
-              </div>
-              <span className="ml-2">({rating})</span>
-            </div>
-
-            {/* <Link to={`/store/${props.petId}`}>
-              <Button block>More details</Button>
-            </Link> */}
-          </div>
+    <Link to={`/movie/${id}`} className="no-underline">
+      <Card
+        hoverable
+        cover={
+          <img
+            className="w-[500px] h-[300px] object-cover"
+            alt="example"
+            src={posterURL}
+          />
         }
-      />
-    </Card>
+      >
+        <h2 className="text-xl font-semibold mb-2">{title}</h2>
+        <Meta
+          description={
+            <div className="flex flex-col gap-3">
+              <p>{limitedDescription}</p>
+              {/* Use the MovieRating component here */}
+              <MovieRating rating={rating} />
+            </div>
+          }
+        />
+      </Card>
+    </Link>
   );
 }
 

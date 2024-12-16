@@ -12,6 +12,7 @@ const AddMovie = ({ handleAddNewMovie }) => {
     title: "",
     description: "",
     posterURL: "",
+    trailerURL: "",
     rating: null,
   });
 
@@ -39,6 +40,11 @@ const AddMovie = ({ handleAddNewMovie }) => {
 
     if (validator.isURL(movieData.posterURL) === false) {
       errorAlert("Please provide a valid movie poster URL");
+      return;
+    }
+
+    if (validator.isURL(movieData.trailerURL) === false) {
+      errorAlert("Please provide a valid movie trailer URL");
       return;
     }
 
@@ -72,7 +78,7 @@ const AddMovie = ({ handleAddNewMovie }) => {
   return (
     <>
       {contextHolder}
-      <Button className="my-4" type="primary" onClick={showModal}>
+      <Button className="m-6 " type="primary" onClick={showModal}>
         Add New Movie
       </Button>
       <Modal
@@ -103,6 +109,7 @@ const AddMovie = ({ handleAddNewMovie }) => {
             }
             placeholder="Movie poster URL"
           />
+
           <Select
             placeholder="Select movie rating"
             style={{ width: "100%" }}
@@ -115,6 +122,13 @@ const AddMovie = ({ handleAddNewMovie }) => {
               { value: 4, label: "4 Stars" },
               { value: 5, label: "5 Stars" },
             ]}
+          />
+          <Input
+            value={movieData.trailerURL}
+            onChange={(event) =>
+              setMovieData({ ...movieData, trailerURL: event.target.value })
+            }
+            placeholder="Movie Trailer URL"
           />
         </form>
       </Modal>

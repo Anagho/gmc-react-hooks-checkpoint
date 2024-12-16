@@ -7,14 +7,17 @@ const MOVIES = [
     posterURL:
       "https://i.pinimg.com/736x/ee/b7/ca/eeb7ca9a987dc7268ce8f2b87703b4d9.jpg",
     rating: 5,
+    trailerURL: "https://www.youtube.com/embed/8jRMVhGwy0M",
   },
   {
     id: 2,
     title: "Dune: Part Two",
-    description: "Paul Atreides unites with the Fremen to battle for Arrakis.",
+    description:
+      "Follow the mythic journey of Paul Atreides as he unites with Chani and the Fremen while on a path of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, Paul endeavors to prevent a terrible future only he can foresee.",
     posterURL:
       "https://roundtable.sacredsf.org/wp-content/uploads/2024/09/dune-part-2-fan-art-poster-by-beenum-editz-v0-7cdlxpdbukob1-1029x1200.webp",
     rating: 4,
+    trailerURL: "https://youtube.com/embed/U2Qp5pL3ovA",
   },
   {
     id: 3,
@@ -23,6 +26,7 @@ const MOVIES = [
     posterURL:
       "https://images.thedirect.com/media/article_full/avengers-5-release-cast-everything-we-know-about-the-kang-dynasty.jpg?imgeng=/cmpr_60/w_1280",
     rating: 5,
+    trailerURL: "https://youtube.com/embed/4F7YaJEXFXA",
   },
   {
     id: 4,
@@ -31,6 +35,7 @@ const MOVIES = [
     posterURL:
       "https://static0.srcdn.com/wordpress/wp-content/uploads/2024/08/spider-men-on-the-statue-of-liberty-in-spider-man-no-way-home.jpg?q=70&fit=crop&w=750&h=422&dpr=1",
     rating: 5,
+    trailerURL: "https://www.youtube.com/embed/CPV0--fgbbw",
   },
   {
     id: 5,
@@ -39,6 +44,7 @@ const MOVIES = [
     posterURL:
       "https://www.blackflix.com/wp-content/uploads/the-batman-part-ii-logo1.webp",
     rating: 4,
+    trailerURL: "https://www.youtube.com/embed/KdA82prVlAw",
   },
 ];
 
